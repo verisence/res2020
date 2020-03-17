@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/restaurantCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    android:elevation="5dp"
+    app:cardBackgroundColor="@color/colorSurface"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/restaurantImage"
+            android:src="@drawable/ic_launcher_background"
+            android:scaleType="centerCrop"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/resName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Name"
+            android:layout_toEndOf="@+id/restaurantImage"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorOnSurface"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Cuisine Type"
+            android:textColor="@color/colorOnSurface"
+            android:id="@+id/resCat"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginStart="10dp"
+            android:layout_below="@+id/resName"
+            android:layout_toEndOf="@+id/restaurantImage"/>
+
+        <TextView
+            android:id="@+id/resClosed"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Closed"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/restaurantImage"
+            android:layout_below="@+id/resCat"
+            android:textSize="13sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginStart="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/resRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resClosed"
+            android:layout_toEndOf="@+id/restaurantImage"
+            android:layout_marginTop="10dp"
+            android:isIndicator="true"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_marginStart="10dp"
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

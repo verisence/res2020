@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 import com.verisence.restaurants.R;
@@ -34,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v==searchBtn){
-            Intent intent = new Intent(this, RestaurantsActivity.class);
+            Intent intent = new Intent(this, RestaurantsListActivity.class);
             location = searchTxt.getText().toString();
-            intent.putExtra("LOCATION_EXTRA", location);
+            intent.putExtra("location", location);
             startActivity(intent);
         }
     }
