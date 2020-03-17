@@ -5,6 +5,9 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Business {
 
     @SerializedName("id")
@@ -43,6 +46,9 @@ public class Business {
     @SerializedName("price")
     @Expose
     private String price;
+    @SerializedName("phone")
+    @Expose
+    private String phone;
     @SerializedName("location")
     @Expose
     private Location location;
@@ -63,6 +69,7 @@ public class Business {
      * @param isClosed
      * @param reviewCount
      * @param price
+     * @param phone
      * @param imageUrl
      * @param name
      * @param alias
@@ -70,7 +77,7 @@ public class Business {
      * @param id
      * @param categories
      */
-    public Business(String id, String alias, String name, String imageUrl, Boolean isClosed, String url, Integer reviewCount, List<Category> categories, Double rating, Coordinates coordinates, List<Object> transactions, String price, Location location) {
+    public Business(String id, String alias, String name, String imageUrl, Boolean isClosed, String url, Integer reviewCount, List<Category> categories, Double rating, Coordinates coordinates, List<Object> transactions, String price, String phone, Location location) {
         super();
         this.id = id;
         this.alias = alias;
@@ -84,6 +91,7 @@ public class Business {
         this.coordinates = coordinates;
         this.transactions = transactions;
         this.price = price;
+        this.phone = phone;
         this.location = location;
     }
 
@@ -181,6 +189,14 @@ public class Business {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Location getLocation() {
