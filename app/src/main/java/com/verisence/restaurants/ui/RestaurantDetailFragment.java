@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -26,9 +27,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RestaurantDetailFragment extends Fragment {
 
     @BindView(R.id.restaurantImageView)
@@ -41,7 +39,7 @@ public class RestaurantDetailFragment extends Fragment {
     @BindView(R.id.phoneTextView) TextView mPhoneLabel;
     @BindView(R.id.addressTextView) TextView mAddressLabel;
     @BindView(R.id.saveRestaurantButton)
-    TextView mSaveRestaurantButton;
+    Button mSaveRestaurantButton;
 
     private Business mRestaurant;
 
@@ -78,8 +76,8 @@ public class RestaurantDetailFragment extends Fragment {
         mRatingBar.setStepSize(0.1f);
         mRatingBar.setMax(5);
         mRatingBar.setRating(mRestaurant.getRating().floatValue());
-        mPhoneLabel.setText(mRestaurant.getAlias());
-        mAddressLabel.setText(mRestaurant.getLocation().toString());
+        mPhoneLabel.setText(mRestaurant.getPhone());
+        mAddressLabel.setText(mRestaurant.getAlias());
         return view;
     }
 
